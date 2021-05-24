@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Filter.module.css'
 
 
-const Filter = ({value, onChange, onBlur}) => (
+const Filter = ({value, onChange}) => (
     <label className = {styles.label}>Find contacts by name 
                     <input
                         className = {styles.input}
@@ -14,7 +14,7 @@ const Filter = ({value, onChange, onBlur}) => (
                         required
                         value= {value}
             onChange={onChange}
-            onBlur={onBlur}
+            //onBlur={onBlur}
                      />
                 </label>
 )
@@ -22,7 +22,7 @@ const Filter = ({value, onChange, onBlur}) => (
 Filter.propTypes = {
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    onBlur:PropTypes.func.isRequired
+    //onBlur:PropTypes.func.isRequired
 }
 
 export default Filter;

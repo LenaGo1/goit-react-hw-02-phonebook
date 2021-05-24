@@ -30,8 +30,10 @@ class App extends Component {
 
     getFilteredContacts = () => {
         const normalizedFilter = this.state.filter.toLowerCase();
+       
         return this.state.contacts.filter(contact =>
             contact.name.toLowerCase().includes(normalizedFilter))
+        
     }
 
     deleteContact = (contactId) => {
@@ -41,9 +43,9 @@ class App extends Component {
         }))
     }
 
-    resetFilter = () => {
-        this.setState({filter: ''})
-    }
+    // resetFilter = () => {
+    //     this.setState({filter: ''})
+    // }
 
     render() {
         const visibleContacts = this.getFilteredContacts()
@@ -54,7 +56,7 @@ class App extends Component {
                 <ContactForm onSubmit={this.addContact}/>
                 
                 <h2>Contacts</h2>
-                <Filter value={this.state.filter} onChange={this.changeFilter} onBlur={this.resetFilter}/>
+                <Filter value={this.state.filter} onChange={this.changeFilter} />
                 <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact}/>
             </Container>
         )
